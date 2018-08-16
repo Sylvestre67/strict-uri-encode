@@ -1,9 +1,12 @@
 {
-	"name": "strict-uri-encode",
+	"name": "oss-strict-uri-encode",
 	"version": "2.0.0",
 	"description": "A stricter URI encode adhering to RFC 3986",
 	"license": "MIT",
-	"repository": "kevva/strict-uri-encode",
+	"publishConfig": {
+		"registry": "https://npm.osslabs.net/"
+	},
+	"repository": "sylvestre67/strict-uri-encode",
 	"author": {
 		"name": "Kevin Mårtensson",
 		"email": "kevinmartensson@gmail.com",
@@ -13,11 +16,13 @@
 		"node": ">=4"
 	},
 	"scripts": {
+		"build":"babel index.js -d dist",
 		"test": "xo && ava"
 	},
 	"files": [
-		"index.js"
+		"dist/"
 	],
+	"main": "dist/index.js",
 	"keywords": [
 		"component",
 		"encode",
@@ -26,6 +31,8 @@
 	],
 	"devDependencies": {
 		"ava": "*",
-		"xo": "*"
+		"xo": "*",
+		"babel-cli": "^6.26.0",
+		"babel-preset-env": "^1.7.0"
 	}
 }
